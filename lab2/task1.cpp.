@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double a = 2.0, b = 3.0;
+    
+    double term1 = pow(a + b, 4);
+    double term2 = pow(a, 4) + 4 * pow(a, 3) * b + 6 * pow(a, 2) * pow(b, 2);
+    double numerator = term1 - term2;
+    double denominator = 4 * a * pow(b, 3) + pow(b, 4);
+    double result = numerator / denominator;
+
+    cout << "1. Результат: " << result << endl;
+}
