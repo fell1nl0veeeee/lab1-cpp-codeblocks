@@ -16,25 +16,15 @@ int main()
     cout << "Enter h: ";
     cin >> h;
 
-    if (a <= 0 || b < a || h <= 0)
-    {
-        cout << "Incorrect input!" << endl;
-        return 0;
-    }
+    cout << "\n      x          Y" << endl;
 
-    cout << "\n-----------------------------------" << endl;
-    cout << setw(12) << "x" << setw(18) << "Y" << endl;
-    cout << "-----------------------------------" << endl;
-
-    for (double x = a; x <= b + h * 0.000001; x += h)
+    for (double x = a; x <= b + 0.000001; x += h)
     {
         y = cos(x) + log(x) - exp(x);
 
-        cout << setw(12) << fixed << setprecision(2) << x
-             << setw(18) << setprecision(4) << y << endl;
+        cout << fixed << setprecision(2) << x
+             << "       " << setprecision(4) << y << endl;
     }
-
-    cout << "-----------------------------------" << endl;
 
     return 0;
 }
