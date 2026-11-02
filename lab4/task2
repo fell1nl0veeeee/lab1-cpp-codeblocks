@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cout << "Enter n: ";
+    cin >> n;
+
+    cout << "Numbers: ";
+
+    for (int i = 10; i <= 99; i++)
+    {
+        int a = i / 10;
+        int b = i % 10;
+
+        if (a + b == n)
+            cout << i << " ";
+    }
+
+    cout << endl;
+
+    return 0;
+}
