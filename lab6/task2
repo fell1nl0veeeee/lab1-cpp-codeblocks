@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    double a[100];
+    int n;
+
+    cout << "Enter array size: ";
+    cin >> n;
+
+    srand(time(0));
+
+    for (int i = 0; i < n; i++)
+    {
+        a[i] = (rand() % 201 - 100) / 10.0;
+    }
+
+    cout << "\nArray:" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << " ";
+    }
+
+    double min = a[0];
+    double max = a[0];
+
+    for (int i = 1; i < n; i++)
+    {
+        if (a[i] < min)
+            min = a[i];
+
+        if (a[i] > max)
+            max = a[i];
+    }
+
+    double average = (min + max) / 2;
+
+    cout << "\n\nMinimum element: " << min << endl;
+    cout << "Maximum element: " << max << endl;
+    cout << "Average: " << average << endl;
+
+    return 0;
+}
