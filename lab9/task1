@@ -1,0 +1,76 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+void task1(int b, int d)
+{
+    cout << "\nSum of the second and fourth numbers: " << b + d << endl;
+}
+
+void task2(int a, int b, int c, int d)
+{
+    int x[4] = {a, b, c, d};
+
+    int min1 = x[0];
+    int min2 = x[1];
+
+    if (min1 > min2)
+    {
+        swap(min1, min2);
+    }
+
+    for (int i = 2; i < 4; i++)
+    {
+        if (x[i] < min1)
+        {
+            min2 = min1;
+            min1 = x[i];
+        }
+        else if (x[i] < min2)
+        {
+            min2 = x[i];
+        }
+    }
+
+    int result = (min1 - min2) * (min1 - min2);
+
+    cout << "\nSquare of the difference of the two smallest numbers: "
+         << result << endl;
+}
+
+int main()
+{
+    SetConsoleOutputCP(65001);
+
+    int a, b, c, d;
+    int choice;
+
+    cout << "Enter four natural numbers: ";
+    cin >> a >> b >> c >> d;
+
+    cout << "\n========== MENU ==========" << endl;
+    cout << "1 - First task" << endl;
+    cout << "2 - Second task" << endl;
+    cout << "0 - Exit" << endl;
+    cout << "==========================" << endl;
+
+    cout << "Choose: ";
+    cin >> choice;
+
+    system("cls");
+
+    if (choice == 1)
+    {
+        task1(b, d);
+    }
+    else if (choice == 2)
+    {
+        task2(a, b, c, d);
+    }
+    else
+    {
+        cout << "Program finished." << endl;
+    }
+
+    return 0;
+}
