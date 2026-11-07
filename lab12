@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+using namespace std;
+
+int main()
+{
+    char text[256];
+    int count = 0;
+
+    cout << "Enter a sentence: ";
+    cin.getline(text, 256);
+
+    char* p = text;
+
+    while (*p != '\0')
+    {
+        if (isdigit(*p))
+        {
+            count++;
+        }
+
+        p++;
+    }
+
+    cout << "\nNumber of digits: " << count << endl;
+
+    return 0;
+}
