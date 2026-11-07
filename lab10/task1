@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int maxDigit(int n)
+{
+    int max = 0;
+
+    while (n > 0)
+    {
+        int digit = n % 10;
+
+        if (digit > max)
+            max = digit;
+
+        n /= 10;
+    }
+
+    return max;
+}
+
+int main()
+{
+    int numbers[7];
+
+    cout << "Enter 7 integers:" << endl;
+
+    for (int i = 0; i < 7; i++)
+    {
+        cin >> numbers[i];
+    }
+
+    cout << "\nMaximum digit in each number:" << endl;
+
+    for (int i = 0; i < 7; i++)
+    {
+        cout << numbers[i] << " -> " << maxDigit(numbers[i]) << endl;
+    }
+
+    return 0;
+}
